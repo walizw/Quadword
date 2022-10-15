@@ -1,0 +1,32 @@
+<header id="header">
+    <nav class="superHeader">
+	<div class="left">
+	    {{range .Site.Menus.left}}
+	    <a href="{{.URL}}">
+		{{.Name}}
+	    </a> |
+	    {{end}}
+	</div>
+
+	<div class="right">
+	    <span class="doNotDisplay">Related sites:</span>
+	    |
+	    {{range .Site.Menus.right}}
+	    <a href="{{.URL}}">
+		{{.Name}}
+	    </a> |
+	    {{end}}
+	</div>
+    </nav>
+
+    <div class="midHeader">
+	<h1 class="headerTitle">
+	    <a href="/">
+		{{.Site.Title}}
+		<span id="headerSubTitle">
+		    {{.Site.Params.desc}}
+		</span>
+	    </a>
+	</h1>
+    </div>
+</header>

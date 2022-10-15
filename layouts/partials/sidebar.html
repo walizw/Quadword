@@ -1,0 +1,41 @@
+<nav id="side-bar">
+    <div>
+	<ul>
+	    {{$url := .RelPermalink}}
+	    {{$parent := .Params.parent}}
+
+	    {{range .Site.Data.sidebar}}
+
+	    {{$active := false}}
+	    {{$has_children := false}}
+
+	    {{if (ne .children nil)}}
+	    {{$has_children = true}}
+	    {{end}}
+	    
+	    {{if (or (eq $url .url) (and (ne $parent nil) (eq $parent .title)))}}
+	    {{$active = true}}
+	    {{else}}
+	    {{$active = false}}
+	    {{end}}
+	    <li>
+		<a href="{{.url}}">
+		    {{if (eq $url .url)}}&raquo;{{else}}&rsaquo;{{end}} {{.title}}{{if $has_children}}/{{end}}
+		</a>
+	    </li>
+
+	    {{if and $active .children}}
+	    <li>
+		<ul>
+		    {{range .children}}
+		    <a href="{{.url}}">
+			{{if (eq $url .url)}}&raquo;{{else}}&rsaquo;{{end}} {{.title}}
+		    </a>
+		    {{end}}
+		</ul>
+	    </li>
+	    {{end}}
+	    {{end}}
+	</ul>
+    </div>
+</nav>

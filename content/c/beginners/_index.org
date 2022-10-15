@@ -1,0 +1,7 @@
+#+title: C for Beginners
+#+parent: c
+#+layout: page
+
+* C for Beginners
+
+The contents of the C for Beginners section:

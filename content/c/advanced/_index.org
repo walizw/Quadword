@@ -1,0 +1,7 @@
+#+title: Advanced C
+#+parent: c
+#+layout: page
+
+* Advanced C
+
+The contents of the Advanced C section:

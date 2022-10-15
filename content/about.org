@@ -1,0 +1,22 @@
+#+title: About
+#+layout: page
+
+* About Quadword
+
+Quadword is a website where I will write about some topics I am into, so I can
+teach them to you as well!
+
+All the content in Quadword is completely-free as in freedom (licensed under
+CC-BY-SA, unless stated otherwise), so yeah, check that license if you want to
+distribute, modify and redistribute the content shared here so you know what you
+can and can't do.
+
+** Contributing
+
+If you like the content posted in Quadword, you can contribute in a lot of
+different ways, you can share quadword so more people get to know the page, you
+can post your own entries by submitting pull requests to the repository (link
+in the top-right corner) or by sending github patches by email (check the
+contact page), you can donate with the buy me a coffee button that is in every
+page in Quadword (i'm sorry for the external and non-free javascript, feel free
+to block it :D)

@@ -1,0 +1,16 @@
+#+title: c
+#+layout: page
+
+* C
+
+This section includes some guides/tutorials of the C programming language, they
+are designed in a way you can go through each one of them lineally as if they
+were a course or a book, or you can just read whatever you think you may need.
+
+The contents are splitten in two categories:
+
+- Beginners
+- Advanced
+
+The contents of both categories are just personal opinion on what I consider
+beginner-friendly and advanced C is.
