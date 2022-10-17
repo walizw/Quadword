@@ -1,0 +1,90 @@
+#+title: Your First C Program
+#+parent: c
+#+layout: page
+
+* Your First C Program
+
+Let's build our first C program together. (Note that this entry is not about you
+necessarily understanding the code, but rather, learning how to compile and run
+a C program).
+
+Let's get started by creating a file, whose extension ends in *.c*, an example
+of a file would be *main.c*:
+
+#+BEGIN_SRC bash
+  touch main.c
+#+END_SRC
+
+And add the following code to that file:
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    printf ("Hello, World!");
+    return 0;
+  }
+#+END_SRC
+
+Once our *main.c* file is compiled and executed, it will output the text
+/Hello, World!/ to the screen.
+
+To compile it, we will need a C compiler, the most used C compiler is the GNU
+Compiler. To install it, we will just need to install =gcc= from our distro's
+repos, for example:
+
+#+BEGIN_SRC bash
+  doas apt install gcc
+  doas pacman -S gcc
+  doas xbps-install gcc
+#+END_SRC
+
+And now that we have a compiler, we will need to compile our code so it can be
+executed. As we - might - already know, a computer cannot understand what we
+just wrote, it understands nothing but zeros and ones, that's basically the job
+of the compiler, to turn the code we wrote into code the computer can
+understand, that is, zeros and ones.
+
+To compile it, we will need to execute the following command:
+
+#+BEGIN_SRC bash
+  gcc [c file] -o [output file]
+#+END_SRC
+
+Let's suppose we want to compile our *main.c* file, and to get a *main.out*
+output file, we'd execute:
+
+#+BEGIN_SRC bash
+  gcc main.c -o main.out
+#+END_SRC
+
+And now, to run our program, we just have to execute the output file that the
+compiler generated for us:
+
+#+BEGIN_SRC bash
+  ./main.out
+#+END_SRC
+
+And it will output "Hello, World!" to the screen.
+
+Even though we still don't know any C, I want you to challenge to change the
+output of the program, so it outputs your name, instead of "Hello, World!".
+Check the contents of *main.c* and replace that, with something like "Hi, my
+name is [name]", compile it and run it again.
+
+This is how I would do it:
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    printf ("Hi, my name is Sara!");
+    return 0;
+  }
+#+END_SRC
+
+You can see the code of this program [[https://github.com/walizw/QuadwordSources/blob/main/C/beginners/1_first_program.c][here]].
