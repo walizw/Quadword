@@ -6,4 +6,9 @@
 
 The contents of the C for Beginners section:
 
+** Getting Started
 - [[/c/beginners/content/first_program][Your First C Program]]
+- [[/c/beginners/content/structure][Structure of a C Program]]
+
+** Basic Concepts
+- [[/c/beginners/content/comments][Comments]]

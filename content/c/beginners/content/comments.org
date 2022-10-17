@@ -1,0 +1,121 @@
+#+title: Comments
+#+parent: c
+#+layout: page
+
+* Comments
+
+Comments are used in a program to document it and enhance to its readability, we
+usually write comments to remind us - or someone else reading our code - what
+the program does or what a particular line of code is doing, we are able to
+write the comments in plain english, as they are ignored by the compiler, so
+we don't have to follow any syntax or naming rules when writing a comment (we
+could even add little ASCII drawings if it's necessary :D)
+
+Comments are incredibly useful and you really want to use them in your programs.
+For example, let's suppose you write a program today, and you come back to it in
+6 months, you might not remember the purporse of a particular function or line
+of code, a single comment can save a significant amount of time, otherwise
+wasted on having to re-understand the code.
+
+There are two ways to add comments into a C program:
+
+- By using the two characters =/= and =*=, they mark the beginning of the
+  comment, these types of comments have to be terminated with =*= and =/=. All
+  the characters included between the opening =/*= and the closing =*/= are
+  treated as part of the comment. This type of comment is referred to as a
+  multi-line comment.
+- By using the character =/= two times (=//=), any character that follow these
+  slashes up to the end of the line are ignored by the compiler, and they are
+  referred to as single-line comments.
+
+Let's look at an example of both:
+
+#+BEGIN_SRC c
+  /*
+    This is a multi-line comment.
+    Line 1
+    Line 2
+    A lot of lines here
+    All these lines will be ignored by the compiler
+   */
+  // I am a single-line comment, the compiler will ignore me :D
+#+END_SRC
+
+As I said before, you can even draw shapes with comments (with =M-x artist-mode=
+for example), or you can use them to have any other kind of data, for example:
+
+#+BEGIN_SRC c
+  /*
+   * Written by walizw
+   * License GPL-3.0-or-later
+   */
+
+  /*********************
+   * Very important
+   ********************/
+#+END_SRC
+
+Or you could also add a comment at the end of a line of code using single-line
+comments:
+
+#+BEGIN_SRC c
+  printf ("Hello, World!"); // This line will show `Hello, World' on the screen
+#+END_SRC
+
+Let's add comments to the code we wrote before:
+
+#+BEGIN_SRC c
+  #include <stdio.h> // include the `stdio' library
+
+  // Entry function `main'
+  int
+  main (void)
+  {
+    printf ("Hello, World!"); // we print "Hello, World!
+    return 0; // we return
+  }
+  // the end of the program
+#+END_SRC
+
+Even though adding comments to a program is considered a very good practise,
+either adding too many or too little comments will make your program's
+readability to drop by a lot (which is the contrary of what we want to achieve
+by adding comments). In that previous snippet of code, there are a lot of
+comments that are not necessary to be added, for example the ones where we
+describe simple things such as the entry function, including stdio, the return
+and the one of the end of the program, we could add comments to that program
+in two ways - as it's a very simple program -, one on the top of the file
+describing the author and its license or one just saying what it should do
+and that's it, for example:
+
+#+BEGIN_SRC c
+  /**
+   * Author: walizw
+   * License: GNU GPL 3.0 or later
+   * This program will print my name :D
+   */
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    printf ("Hello, I am Sara!");
+    return 0;
+  }
+#+END_SRC
+
+Or a single line comment saying what it should do, and that's it:
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  // prints my name to the screen
+  int
+  main (void)
+  {
+    printf ("Hello, I am Sara!");
+    return 0;
+  }
+#+END_SRC
+
+And that should be it - for this incredibly simple program.

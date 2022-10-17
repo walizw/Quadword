@@ -1,0 +1,65 @@
+#+title: Structure of a C Program
+#+parent: c
+#+layout: page
+
+* Structure of a C Program
+
+Let's walk through the structure of this simple C program:
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    printf ("Hello, World!");
+    return 0;
+  }
+#+END_SRC
+
+That simple program, follows the basic structure of all C programs.
+
+As you can see, in the =int main= lines it's followed by two parenthesis, those
+two parenthesis are signifying that it's a function, as we don't know what a
+function is yet, we could just think of it as a container that holds code, in
+this case, the main function is the function that's executed once our program is
+ran, that is, all the code in between ={= and =}= (the body of the function)
+will be executed once our program is ran. As the =main= function is a special C
+function, there must be one and only one main function in a C program.
+
+Another thing to notice, is that in C programs case-sensitivity matters so,
+whether you use uppercase or lowercase, it's going to make a difference, if we
+were to rename =int= to =Int= it's not going to compile and, instead, is going
+to give us an error, because the compiler doesn't know what =Int= is, and
+therefore, doesn't know what to do with it. For example:
+
+#+BEGIN_SRC c
+  int Main () // is not the same as `int main'
+
+  Int main () // will give an error
+
+  int MAIN () // is not the same as `main' nor `Main'
+#+END_SRC
+
+What doesn't matter is where you start writing a line, for example:
+
+#+BEGIN_SRC c
+            int
+   main (void)
+              {
+                printf ("Hello, World!");
+      return 0;
+  }
+#+END_SRC
+
+That code is perfectly valid, as the compiler usually ignores all whitespaces,
+but even though it is valid, it is completely unappealing and nobody should ever
+code like that.
+
+Another thing that is *EXTREMELY IMPORTANT* is that *all the statements end in a
+semicolon*, not doing so will return an error as the compiler won't know where
+that statement ends, and it's an error in the syntax of the language. The lines
+=#include <stdio.h>=, =int=, =main (void)=, ={= and =}= are not statements,
+that's why we don't append a semicolon to the end of those lines, but the lines
+where we print our name and =return 0= are statements, and that's why we *MUST*
+add a semicolon to it (we'll talk about statements in much detail later.)
