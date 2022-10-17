@@ -1,4 +1,4 @@
-#+title: c
+#+title: C
 #+layout: page
 
 * C
@@ -11,3 +11,6 @@
 - [[/c/content/comments][Comments]]
 - [[/c/content/preprocessor][The Preprocessor]]
 - [[/c/content/io][Displaying Output and Recieving Input]]
+
+** Variables and Data Types
+- [[/c/content/variables][Variables]]
