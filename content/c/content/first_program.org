@@ -1,5 +1,4 @@
 #+title: Your First C Program
-#+parent: c
 #+layout: page
 
 * Your First C Program

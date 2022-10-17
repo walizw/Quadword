@@ -1,0 +1,82 @@
+#+title: The Preprocessor
+#+layout: page
+
+* The Preprocessor
+
+The pre-processor is a unique feature of the C programming language, and it is
+not found in many other higher-level programming languages. It allows programs
+to be easier to develop, easier to read, easier to modify and easier to port to
+different computer systems.
+
+The pre-processor is part of the C compilaton process that recognises special
+statements, analyses these statements before the analysis of the C program
+itself takes place. You could think of the pre-processor as sets of instructions
+for your compiler to do something before compiling the actual C source code,
+that's why it's called pre-processor, because it's processed before the
+compilation process takes place.
+
+Pre-processor statements are identifier by the presence of a =#= sign, which
+must be the first non-space character on the line. We've already used the
+include directive (pre-processor statements are also known as pre-processor
+directives) in the program we made before.
+
+We will utilise the pre-processor to create our own constants and macros with
+the =#define= statement, build our own library files with the =#include=
+directive, make more powerful programs with the conditional =#ifdef=, =#endif=,
+=#else= and =#ifndef= statements (we will talk more about every single one of
+the directives on later entries)
+
+* The #include directive
+
+The =#include= statement is a pre-processor directive, it follows this syntax:
+
+#+BEGIN_SRC c
+  #include <file to include>
+#+END_SRC
+
+As mentioned before, we know it's a pre-processor directive because it starts
+with the =#= symbol, it's an instruction to your compiler to do something before
+compiling the source, and include statements are usually found at the beginning
+of the program - however, they can be anywhere in your code.
+
+In the program we wrote before, the compiler is instructed to "/include/" in our
+program the contents of the file =stdio.h=, it is called a header file because
+it has the =.h= extension.
+
+** Header Files
+
+Header files define information about some of the functions that are provided by
+that file, =stdio.h=, for example, is the standard C library header and provides
+functionality for displaying output, managing file, among many other things. We
+need to include this file in a program when using the =printf ()= function from
+the standard library. =stdio.h= contains the information that the compiler needs
+to understand what =printf ()= means, as well as other functions that deal with
+input and output.
+
+*Fun fact:* stdio is short for standard input/output.
+
+In the future, we will be creating our own header files to use with our programs
+:D
+
+Header file names are case sensitive on some systems (such as *NIX systems), so
+you should always write them in lowercase.
+
+There are two ways to include header files in your program:
+- Using angle brackets (=<= and =>=), for example:
+
+  #+BEGIN_SRC c
+    #include <header.h>
+  #+END_SRC
+
+- Using double quotes (="=), for example:
+
+  #+BEGIN_SRC c
+    #include "header.h"
+  #+END_SRC
+
+  Using double quotes will tell the pre-processor to look in the directory
+  where the C source code file is located. This will be the way to include files
+  that we will use when we create our own header files.
+
+*Note:* It is very important to take into account that, executable code must go
+into a source code file (that is, a =.c= file) and not a header file.

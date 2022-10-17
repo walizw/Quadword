@@ -1,0 +1,99 @@
+#+title: Displaying Output and Recieving Input
+#+layout: page
+
+* Displaying Output
+
+In the program that we wrote before, you should have noticed that there was a
+line of code that include the word =printf=:
+
+#+BEGIN_SRC c
+  printf ("Hi, I'm Sara!");
+#+END_SRC
+
+printf is a standard library function (included from =stdio.h=), it outputs
+information to the terminal (the standard output stream, which is the terminal
+by default), the information displayed is based on what is in between the
+parentheses that immediately follow the function name (=printf=), also notice
+that this line does end with a semicolon.
+
+Printf is probably the most common function used in C, as it provides an easy
+and convenient mean of displaying program results as not only simple phrases
+can be displayed, with the use of format specifiers (which we will look at
+later), we can print the values of variables, and even the result of evaluating
+expressions.
+
+* Recieving Input
+
+Now that we know how to display output, let's learn how to receive input from
+the user executing the program.
+
+*Note:* Some concepts that we haven't talked about yet will be mentioned here,
+so don't worry that much if you don't understand this entirely - *yet*.
+
+It is very useful to ask the user to enter data into a program via the terminal,
+that's why the C library contains several input functions, and =scanf= is the
+most general of them as it can read a variety of formats.
+
+The =scanf= function reads the input from the standard input stream *stdin* and
+scans that input according to the *format* provided, format can be a simple
+constant string, but you can specify =%s=, =%d=, =%c=, =%f= and many more to
+read strings (basically, text), integer (numbers), characters (single letters),
+or floats (decimal numbers.)
+
+If the *stdin* stream is the input from the keyboard (which is its default),
+then text is read in, because the keys generate text characters: letters,
+digits and punctuation. When you enter the integer 1984, for example, you type
+the characters =1= =9= =8= and  =4=, if you want to store that as a numerical
+value rather than as a string (text), your program has to convert the string
+character by character to a numerical value, and this is the job of the =scanf=
+function.
+
+Like printf, scanf uses a control string followed by a list of arguments, the
+control string indicates the destination data types for the input stream of
+characters. The =printf= function uses variable names, constants and expressions
+as its argument list, whereas the =scanf= function uses pointers to variables
+(pointers is kind of a complicated concept that we will learn later on these
+entries, luckily for us, we don't even need to know what a pointer is, in order
+to use this function). We just have to remember these three rules about scanf:
+
+- It returns the number of items that it successfully reads, if you were
+  expecting 5 for example, but only 3 were provided, then those only three
+  results will be returned.
+- If you use =scanf= to read a value for one of the basic variable types we've
+  discussed before, precede the variable name with an =&=.
+- If you use =scanf= to read a string into a string variable, don't use an =&=.
+
+Let's look at an example (you don't have to understand this entire source yet,
+as in the next entries we will be looking at the necessary concepts to build
+entire programs like this yourself):
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  int
+  main (void)
+  {
+    int my_variable;
+    printf ("Enter a value: ");
+    scanf ("%d", &my_variable);
+
+    printf ("You entered: %d", my_variable);
+    return 0;
+  }
+#+END_SRC
+
+What we are doing in that program is basically, creating a variable (don't worry
+that much about what a variable is and how they are created, as we are going to
+learn it in the following entries), and then we are printing the "Enter a value"
+text on the screen, and after that, we are obtaining the value of an integer
+(from the format specifier =%d=, again, we'll learn more about format specifiers
+later on next entries) and we are storing that obtained value into =my_variable=
+variable, and once we've finished obtaining that value, we will output to the
+screen "You entered: " followed by the value of the =my_variable= variable,
+again, using the =%d= format specifier that is used for integers.
+
+It is important to notice that when a program uses =scanf= to get input from the
+user's keyboard, it waits for you to input some text, the program will literally
+pause until the data is passed to the program.
+
+You can access this program's source [[https://raw.githubusercontent.com/walizw/QuadwordSources/main/C/beginners/2_input.c][here]].

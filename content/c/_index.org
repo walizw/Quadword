@@ -3,14 +3,11 @@
 
 * C
 
-This section includes some guides/tutorials of the C programming language, they
-are designed in a way you can go through each one of them lineally as if they
-were a course or a book, or you can just read whatever you think you may need.
+** Getting Started
+- [[/c/content/first_program][Your First C Program]]
+- [[/c/content/structure][Structure of a C Program]]
 
-The contents are splitten in two categories:
-
-- Beginners
-- Advanced
-
-The contents of both categories are just personal opinion on what I consider
-beginner-friendly and advanced C is.
+** Basic Concepts
+- [[/c/content/comments][Comments]]
+- [[/c/content/preprocessor][The Preprocessor]]
+- [[/c/content/io][Displaying Output and Recieving Input]]

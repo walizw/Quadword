@@ -1,5 +1,4 @@
 #+title: Comments
-#+parent: c
 #+layout: page
 
 * Comments

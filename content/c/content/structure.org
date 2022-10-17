@@ -1,5 +1,4 @@
 #+title: Structure of a C Program
-#+parent: c
 #+layout: page
 
 * Structure of a C Program

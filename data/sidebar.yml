@@ -4,22 +4,7 @@
   url: /about/
 - title: c
   url: /c/
-  children:
-    - title: beginners
-      url: /c/beginners/
-    - title: advanced
-      url: /c/advanced/
 - title: kernels
   url: /kernels/
-  children:
-    - title: theory
-      url: #/kernels/theory/
-    - title: development
-      url: #/kernel/development/
 - title: compilers
   url: /compilers/
-  children:
-    - title: theory
-      url: #
-    - title: development
-      url: #
