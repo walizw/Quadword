@@ -162,7 +162,7 @@ were to print the value of =x= nothing would be printed on the screen, but
 rather a new line would be added to the output.
 
 | Sequence | Meaning          |
-| -------  | -------          |
+|----------+------------------|
 | \a       | Alert (ANSI C)   |
 | \b       | Backspace        |
 | \f       | Form feed        |
