@@ -4,18 +4,18 @@
 * C
 
 ** Getting Started
-- [[/c/content/first_program][Your First C Program]]
-- [[/c/content/structure][Structure of a C Program]]
+- [[/c/content/intro/first_program][Your First C Program]]
+- [[/c/content/intro/structure][Structure of a C Program]]
 
 ** Basic Concepts
-- [[/c/content/comments][Comments]]
-- [[/c/content/preprocessor][The Preprocessor]]
-- [[/c/content/io][Displaying Output and Recieving Input]]
+- [[/c/content/basic_concepts/comments][Comments]]
+- [[/c/content/basic_concepts/preprocessor][The Preprocessor]]
+- [[/c/content/basic_concepts/io][Displaying Output and Recieving Input]]
 
 ** Variables and Data Types
-- [[/c/content/variables][Variables]]
-- [[/c/content/basic_datatypes][Basic Data Types]]
-- [[/c/content/enums_chars][Enums and Chars]]
+- [[/c/content/variables_data_types/variables][Variables]]
+- [[/c/content/variables_data_types/basic_datatypes][Basic Data Types]]
+- [[/c/content/variables_data_types/enums_chars][Enums and Chars]]
 
 ** Operators
 
@@ -86,7 +86,7 @@
 
 *** Joinable and Detached Threads
 
-*** Inter-Thread COmmunication
+*** Inter-Thread Communication
 
 *** Notification Chains
 
