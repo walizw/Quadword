@@ -1,0 +1,175 @@
+#+title: Enums and Chars
+#+layout: page
+
+* Enums
+
+An enum is a datatype that allows a programmer to define a variable and specify
+the valid values that could be stored into that variable, for example, you can
+create a variable named =my_colour= and it can only contain of the primary
+colours, red, yellow or blue, and no other values.
+
+To create an enum, you first have to define the enum type and give it a name,
+then you'd give the name of the enumerated datatype, and then the list of
+identifiers - possible values - (enclosed withing a set of curly braces),
+for example:
+
+#+BEGIN_SRC c
+  enum primary_colour
+  {
+    red,
+    yellow,
+    blue
+  };
+#+END_SRC
+
+Now the variables declared to be of this datatype, can be assigned the values
+red, yellow and blue inside the program, no other values are allowed for those
+variables.
+
+To declare a variable to be the type =enum primary_colour= we first have to use
+the keyword enum, followed by the enumerated type name, the variable name and -
+potentially - its initialisation value, for example:
+
+#+BEGIN_SRC c
+  enum primary_colour favourite_colour;
+  favourite_color = red;
+#+END_SRC
+
+Another example could be of an enum containing all the months of the year:
+
+#+BEGIN_SRC c
+  enum month
+  {
+    january,
+    february,
+    march,
+    april,
+    may,
+    june,
+    july,
+    august,
+    september,
+    october,
+    november,
+    december
+  };
+#+END_SRC
+
+** Enums as ints
+
+Under the hood, as far as how enums are implemented in the C programming
+language, is that, the compiler actually treats enumeration identifiers as
+integer constants, the first name in the list is 0, the next name is 1, the one
+that follows is 2, and so on with all the values in the list.
+
+For example, if we have the following =enum month=:
+
+#+BEGIN_SRC c
+  enum month this_month;
+#+END_SRC
+
+And if we assign its value to be =february=:
+
+#+BEGIN_SRC c
+  this_month = february;
+#+END_SRC
+
+The actual value of =this_month= will be equal to 1, because if we go over the
+elements of the enumeration identifiers of the =month= enum, we see that the
+value of =january= the first element will be zero, therefore, =february=, the
+second element will be 1.
+
+If you want to have a specific integer value associated with an enumeration
+identifier, the integer can be assigned to the identifier when the data type
+is defined, for example:
+
+#+BEGIN_SRC c
+  enum direction
+  {
+    up,
+    down,
+    left = 10,
+    right
+  };
+#+END_SRC
+
+The enum =direction= has four different possible values, =up=, =down=, =left=
+and =right=. The value of =up= would be zero, as it is the first element that
+appears in the list, the value of =down= would be 1, but the value of =left=
+would be 10, because we explicitly told the compiler to assign its value to 10,
+and finally, the value of =right= will be the value of the previous element plus
+one, that is, the value of =right= is 11 instead of 2.
+
+* Char
+
+Chars represent a single character such as the letter 'a', the digit character
+'6' or a semicolon ';'. Note that character literals *must* be enclosed in a
+pair of single quotes, such as 'A' or 'Z'.
+
+You can also declare char variables to be =unsigned=, they can be used to
+explicitly tell the compiler that a particular variable is a signed quanitity.
+We will talk about character strings later - which are another world to single
+characters.
+
+** Declaring a char
+
+To declare a char variable, you can follow the exact same syntax we've used
+up until now, just by specifying the =char= datatype:
+
+#+BEGIN_SRC c
+  char character_variable;
+  character_variable = 'T';
+#+END_SRC
+
+Again, notice that when we are setting the value of =T= to =character_variable=,
+we are doing so by enclosing that character within a pair of single quotes, the
+following are not valid char values:
+
+#+BEGIN_SRC c
+  /* The following is not valid because the compiler will think that `T' is a
+     variable. */
+  character_variable = T;
+
+  /* The following is invalid because the compiler will think that "T" is a
+     string*/
+  character_variable = "T";
+#+END_SRC
+
+You can also use a numerical code to assign values, therefore, the following
+assignation is completely valid:
+
+#+BEGIN_SRC c
+  character_variable = 47;
+#+END_SRC
+
+** Escape characters
+
+C contains special characters that represent actions, actions such as
+backspacing, going to the next line, making the terminal bell ring (or speaker
+beep), we can represent these actions by using special symbol sequences called
+escape sequences.
+
+Notice that escape sequences must also be enclosed in between single quotes when
+assigned to a character variable.
+
+#+BEGIN_SRC c
+  char x = '\n';
+#+END_SRC
+
+The value of the variable =x= are not two character =\= and =n=, but instead one
+single character that represents a new line, a line break, therefore, if you
+were to print the value of =x= nothing would be printed on the screen, but
+rather a new line would be added to the output.
+
+| Sequence | Meaning          |
+| -------  | -------          |
+| \a       | Alert (ANSI C)   |
+| \b       | Backspace        |
+| \f       | Form feed        |
+| \n       | Newline          |
+| \r       | Carriage return  |
+| \t       | Horizontal tab   |
+| \v       | Vertical tab     |
+| \\       | Backslash (\)    |
+| \'       | Single quote (') |
+| \"       | Double quote (") |
