@@ -33,6 +33,8 @@ as operating systems topics, multithreading, networking, and compiler theory.
 
 *** Operators
 
+- [[/posts/2022/10/intro_operators][Introduction to Operators]]
+
 *** Control Flow
 
 *** Arrays
