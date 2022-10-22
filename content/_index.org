@@ -1,16 +1,1 @@
-#+title: Quadword
-#+layout: page
-
-* Quadword
-
-Hello everyone, welcome to Quadword!
-
-Quadword is a little site of mine where I post about certain topics I personally
-like, in a way where you can learn about them as well. I am a lot into low-level
-programming, so that might be the main focus of writing here, as well as some
-other personal topics or stuff that I might want to write in the future, who
-knows.
-
-I have a lot of ideas to write about, such as C and assembly programming,
-kernels, compilers and interpreters development so, if you are into that kind of
-stuff as well, keep an eye on here so you don't miss any post!
+#+title: Home

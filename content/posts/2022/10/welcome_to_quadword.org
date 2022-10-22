@@ -1,0 +1,31 @@
+#+title: Welcome to Quadword
+#+authors[]: walizw
+#+categories[]: Information
+#+date: Thu Oct 20 17:12:30 -05 2022
+#+thumb: /img/posts/2022/10/welcome_to_quadword.png
+#+tags[]: Information Quadword
+#+excerpt: An brief introduction to what Quadword is.
+#+featured: 1
+#+pinned: 1
+#+layout: post
+
+Hello everyone, I am walizw and let me welcome you to Quadword!
+
+Quadword is a multi-author website, where anyone can post entries about whatever
+topic they like, in a completely-free - as in freedom, and as in free beer -
+manner.
+
+I started Quadword because I wanted a website where I could write entries about
+programming, but this is not a niche website, so you can write about sports,
+cinema, music, your pets, or tell a funny store that happened once to you :D
+
+Quadword is a static website, so it lacks in some features like a CMS (Content
+Management System), but in the *Contributing* section of the site, is enough
+information for you to start adding your own content to Quadword.
+
+Everyone is free to add whatever they want, there are no ads, there are no
+trackers, I wanted to keep everything as sober and minimalistic as possible,
+it's just the reader, and the content, there's no more to it.
+
+I really hope you enjoy using Quadword - whether you write, or you read -. If
+you do enjoy it, please consider [[/donate][donating]].

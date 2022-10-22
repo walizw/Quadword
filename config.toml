@@ -1,30 +1,8 @@
-baseURL = 'https://lovelacec.org/'
+baseURL = 'http://lovelacec.org/'
 languageCode = 'en-gb'
 title = 'Quadword'
 
-[params]
-	desc = "What is knowledge for if not to be free"
-	author = "walizw"
-	theme = "darkgreen"
-[menu]
-[[menu.left]]
-  identifier = "quadword"
-  name = "quadword"
-  url = "https://lovelacec.org/"
-  weight = -100
-[[menu.left]]
-  identifier = "hugorc"
-  name = "hugorc"
-  url = "https://rc.lovelacec.org/"
-  weight = -90
-
-[[menu.right]]
-  identifier = "sitemap"
-  name = "sitemap"
-  url = "/sitemap.xml"
-  weight = -100
-[[menu.right]]
-  identifier = "source"
-  name = "source code"
-  url = "https://github.com/walizw/quadword"
-  weight = -90
+[taxonomies]
+	author = "authors"
+	tag = "tags"
+	category = "categories"

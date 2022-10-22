@@ -1,7 +1,7 @@
 {{ partial "partials/head.html" (dict "context" . "class" "single") }}
 {{ partial "partials/header.html" . }}
 
-{{$path := printf "/%s/%s" "authors" (.Params.author | urlize)}}
+{{$path := printf "/%s/%s" "authors" (index .Params.authors 0 | urlize)}}
 {{$author_page := .Site.GetPage $path}}
 
 <div class="container">
@@ -10,16 +10,19 @@
       <h1 class="entry-title m_b_2rem">
 	{{.Name}}
       </h1>
-
       <div class="entry-meta align-items-center">
 	<a href="{{$path}}" class="author-avatar">
-	  <img alt="{{$author_page.Name}}"
-	       src="{{$author_page.Params.avatar}}"/>
+	  <img alt="{{$author_page.Name}}" src="{{$author_page.Params.avatar}}"/>
 	</a>
 	<a href="{{$path}}">
 	  {{$author_page.Name}}
 	</a>
+	in
+	<a href="/categories/{{index .Params.categories 0 | urlize}}">
+	  {{index .Params.categories 0}}
+	</a>
 	<br/>
+
 	<span>
 	  {{.Date.Format "Jan 2"}}
 	</span>
@@ -31,15 +34,32 @@
     </div>
   </div>
 
+  {{if (ne .Params.thumb nil)}}
+  <figure class="image zoom mb-5">
+    <img alt="{{.Name}}" src="{{.Params.thumb}}"/>
+  </figure>
+  {{end}}
+
   <article class="entry-wraper mb-5">
     {{if (ne .Params.excerpt nil)}}
     <div class="excerpt mb-4">
       <p>{{.Params.excerpt}}</p>
     </div>
     {{end}}
-
     <div class="entry-main-content dropcap">
       {{.Content}}
+    </div>
+
+    <div class="entry-bottom">
+      <div class="tags-wrap heading">
+	<span class="tags">
+	  {{range .Params.tags}}
+	  <a href="/tags/{{. | urlize}}" rel="tag">
+	    {{.}}
+	  </a>
+	  {{end}}
+	</span>
+      </div>
     </div>
 
     <div class="box box-author m_b_2rem">
@@ -62,6 +82,19 @@
       </div>
     </div>
   </article>
+
+  <div class="related-posts mb-5">
+    <h4 class="spanborder text-center">
+      <span>Related Posts</span>
+    </h4>
+    <div class="row justify-content-between">
+      <div class="divider-2"></div>
+      {{$related := .Site.RegularPages.Related . | first 3}}
+      {{range $related}}
+      {{partial "partials/elements/related-post-block.html" (dict "post" . "site" $.Site "excerpt" "0" "size" "4")}}
+      {{end}}
+    </div>
+  </div>
 </div>
 
 {{ partial "partials/footer.html" . }}

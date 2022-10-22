@@ -1,0 +1,134 @@
+#+title: Variables
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Thu Oct 20 14:12:15 -05 2022
+#+thumb: /img/posts/2022/10/variables.png
+#+tags[]: C Programming Beginners
+#+excerpt: Learn what a variable is and how we can create them in C.
+#+featured: 1
+#+layout: post
+
+As you might know, a program needs to store the instructions of its program and
+the data that it acts upon while your computer is executing that program. Such
+information is stored in memory (RAM), RAM's contents are lost when the computer
+is turned off unlike hard drives that store persitent data.
+
+You can think of RAM as an ordered sequence of boxes, the box is full when it
+represents 1 or the box is empty when it represents 0, each box represents one
+binary digit, either 0 or 1 (/false/ and /true/, respectively), each one of
+those boxes is called a /bit/.
+
+Bits in memory are grouped into sets of eight, eight bits make one byte, and
+each of those bytes have been labeled with a number (which we will refer to as
+address) and the address of a byte uniquely references that byte in your
+computer's memory.
+
+Again, just to summarise, memory consists of a large number of bits that are in
+groups of eight (called bytes) and each byte has a unique address.
+
+* Variables
+
+The true power of programs you create is their manipulation of data, that's why
+we need to understand the different data types you can use, as well as how to
+create and name variables. Constants are types of data that do not change and
+maintain their values throughout the entire life of the program, variables are
+the opposite of a constant, variables are types of data that might change or
+be assigned values as the program runs and these variables are stored in memory
+through addresses, however, it would be extremely hard to keep track of the
+addresses of each of our variables - specially when their values changes every
+time the program is executed -, that's why we manage variables by names and not
+by their addresses.
+
+A variable is the name you give to your computer's memory locations which are
+used to store values in a computer program.
+
+Consider the following example: assume you want to store two values =10= and
+=20= in your program and at a later stage, you want to use these two values,
+first we'd create variables (hopefully with appropriate names of what they are
+doing so we know what a variable is there for by just reading its name), store
+the values in those two variables and retrieve and use the stored values from
+the variables.
+
+* Naming Variables
+
+The rules for naming variables in C is that all names must begin with either a
+letter or an underscore (=_=) and can be followed by any combination of letters
+(uppercase or lowercase), underscores or the digits 0-9 (numbers from 0 to 9),
+the following is a list of valid variable names:
+
+- age
+- i
+- u7x6
+- my_data
+- _another_variable
+
+And the following is a list of invalid variable names:
+
+- temp$value - =$= is not a valid character.
+- my flag - embedded spaces are not permitted.
+- 3walizw - variable names cannot start with a number.
+- int - =int= is a reserved word.
+
+It's a good practise to use meaningful names when selecting variable names, it
+can dramatically increase the readability of your program.
+
+* Data Types
+
+Some types of data in programs are numbers, letters or words. The computer needs
+a way to identify and use these different kinds. A data type represents the type
+of the data which you can process using your program, it also correspond to byte
+sizes on the platform of your program - so it basically allocates the right
+amount of memory for a determined variable.
+
+* Declaring Variables
+
+Declaring a variable is when you specify the type of the variable followed by
+the variable name, it specifies to the compiler how a particular variable will
+be used by the program.
+
+For example, the keyword =int= is used to declare the basic integer variable
+(basically, a number), to declare a variable, we must first specify the datatype
+in this case =int=, and then the chosen name of the variable, and then a
+semicolon:
+
+#+BEGIN_SRC c
+  type-specifier variable-name;
+#+END_SRC
+
+To declare more than one variable, you can declare each one of them separately,
+or you can follow the int with a list of names in which each name is separated
+by a comma, and all the declared variables are of the same type.
+
+#+BEGIN_SRC c
+  int variable1, variable2;
+  int variable3;
+#+END_SRC
+
+Notice that C requires that all program variables be declared before they are
+used in a program.
+
+The above snippet of code, creates variables but does not provide values for
+them, we can assign a value to a variable by using the === operator (called the
+assignment operator.)
+
+#+BEGIN_SRC c
+  variable3 = 1;
+#+END_SRC
+
+* Initialising Variables
+
+To initialise a variable means to assign it a starting or initial value, this is
+important to do, because otherwise it could led to problems in our program.
+
+This can be done - but is not a must - as part of the declaration, follow the
+variable name with the assignment operator (===) and the value you want the
+variable to have, for example:
+
+#+BEGIN_SRC c
+  int variable4 = 21;
+  int x, z = 94;
+#+END_SRC
+
+In the last example, only the variable =z= is initialised. It is best toa void
+putting initialised and non-initialised variables in the same declaration
+statement.

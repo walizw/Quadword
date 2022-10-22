@@ -1,0 +1,222 @@
+#+title: The Complete C Course
+#+layout: page
+#+date: Sat Oct 22 10:50:44 -05 2022
+#+authors[]: walizw
+
+The following, is my attempt to create the most comprehensive C learning
+resource in all the internet, all its content is completely-free - as in
+freedom - and will remain like this forever. After completing all these entries
+you'd be extremely proficient not only in C, but a lot of other CS topics such
+as operating systems topics, multithreading, networking, and compiler theory.
+
+** Contents
+
+*** Getting Started
+
+- [[/posts/2022/10/first_program][Your First C Program]]
+- [[/posts/2022/10/structure][Structure of a C Program]]
+
+*** Basic Concepts
+
+- [[/posts/2022/10/comments][Comments]]
+- [[/posts/2022/10/preprocessor][The Pre-processor]]
+- [[/posts/2022/10/io][Displaying Output and Receiving Input]]
+
+*** Variables and Data Types
+
+- [[/posts/2022/10/variables][Variables]]
+- [[/posts/2022/10/basic_datatypes][Basic Data Types]]
+- [[/posts/2022/10/enums_chars][Enums and Chars]]
+- [[/posts/2022/10/format_specifiers][Format Specifiers]]
+- [[/posts/2022/10/cmd_args][Command-Line Arguments]]
+- [[/posts/2022/10/challenge1][Your First C Challenge]]
+
+*** Operators
+
+*** Control Flow
+
+*** Arrays
+
+*** Functions
+
+*** Strings
+
+*** Pointers
+
+*** Structures
+
+*** File I/O
+
+*** The Standard C Library
+
+*** Working with Larger Programs
+
+*** Storage Classes
+
+*** Advanced Data Types
+
+*** Type Qualifiers
+
+*** Bit Manipulation
+
+*** Advanced Control Flow
+
+*** Input and Output
+
+*** Advanced Function Concepts
+
+*** Unions
+
+*** The Pre-processor
+
+*** Macros
+
+*** Debugging
+
+*** Advanced Pointers
+
+**** Addresses and Indirection
+
+**** Pointer Problems
+
+*** Static Libraries and Shared Objects
+
+*** Useful C Libraries
+
+*** Inter-Process Comunication
+
+**** Unix Domain Sockets
+
+**** Message Queues
+
+**** Shared Memory
+
+**** Signals
+
+*** Multi-threading
+
+**** Concurrency vs Parallelism
+
+**** Joinable and Detached Threads
+
+**** Inter-Thread Communication
+
+**** Notification Chains
+
+**** Thread Cancellation
+
+***** Asynchronous
+
+***** Deferred
+
+**** Listener Threads
+
+**** Thread Synchronisation
+
+**** Deadlocks
+
+**** Condition Variables
+
+**** Thread Barriers
+
+**** Semaphores
+
+**** Spin Locks
+
+**** Recursive Mutexes/Locks
+
+**** Read-Write Locks
+
+*** Advanced Multi-Threading
+
+**** Thread Management
+
+**** Thread Pausing and Resuming
+
+**** Thread Pools
+
+**** Thread Barriers
+
+**** Wait Queues
+
+**** Recursive Mutexes
+
+**** Read-Write Locks
+
+**** Monitors
+
+*** Data Structures and Algoritms
+
+**** Recursion
+
+**** Arrays
+
+**** ADT
+
+**** Strings
+
+**** Matrices
+
+**** Sparce Matrix and Polynomial Representation
+
+**** Linked List
+
+**** Sparce Matrix and Polynomial using Linked List
+
+**** Stack
+
+**** Queues
+
+**** Trees
+
+**** Binary Search Trees
+
+**** AVL Trees
+
+**** Search Trees
+
+**** Heap
+
+**** Sorting Techniques
+
+**** Hashing Techniques
+
+**** Graphs
+
+**** Asymptotic Notations
+
+*** Sockets
+
+**** Networking Labs
+
+**** IP Subnet
+
+**** Layer 2 Routing
+
+**** Layer 3 Routing
+
+**** Data Structure for L3 Routing Tables
+
+**** Dynamic Construction for Layer 3 Routing Table
+
+**** Broadcast and Collision Domain
+
+**** LANs and VLANs
+
+**** Router Vlan Routing
+
+**** Inter Vlan Routing
+
+**** Transport Layer
+
+***** TCP Preliminars
+
+**** Socket Programming
+
+**** The Application Layer
+
+**** Domain Name System
+
+**** Packet Encapsulation
+
+**** Concept of TLVs - Type Length Value

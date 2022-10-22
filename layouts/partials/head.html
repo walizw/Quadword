@@ -1,12 +1,38 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>{{.Title}}</title>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-with, initial-scale=1"/>
+    <title>{{.context.Title}} - {{.context.Site.Title}}</title>
+    <meta name="theme-color" content="#ffffff"/>
 
-	<link href="/style/{{.Site.Params.theme}}.css" rel="stylesheet"/>
+    <link href="/icon.png" rel="icon"/>
 
-	<meta charset="UTF-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    </head>
-    <body>
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/owl.carousel.min.css" rel="stylesheet"/>
+    <link href="/css/owl.theme.default.min.css" rel="stylesheet"/>
+
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="/css/widgets.css" rel="stylesheet"/>
+    <link href="/css/color-default.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+    <link href="/css/fontello.css" rel="stylesheet"/>
+
+    <link href="/css/popup.css" rel="stylesheet"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.bpopup.min.js"></script>
+    <script>
+      $(document).ready (function () {
+	  $("#popup_this").bPopup ()
+      })
+    </script>
+  </head>
+  <body
+    class="{{.class}}">
+
+    <div class="top-scroll-bar"></div>

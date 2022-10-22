@@ -1,0 +1,62 @@
+{{ partial "partials/head.html" (dict "context" . "class" "single") }}
+{{ partial "partials/header.html" . }}
+
+{{$paginator := .Paginate .Pages 10}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-9 col-xl-9">
+      <h2 class="spanborder h4">
+	<span>{{.Name}}</span>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="content-widget">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="row justify-content-between">
+
+	  {{range $paginator.Pages}}
+	  {{partial "partials/elements/post-gallery-item.html" (dict "post" . "site" $.Site)}}
+	  {{end}}
+
+	  <ul class="page-numbers heading">
+	    {{if $paginator.HasPrev}}
+	    <li>
+	      <a class="next page-numbers" href="{{$paginator.Prev.URL}}">
+		<i class="icon-left-open-big"></i>
+	      </a>
+	    </li>
+	    {{end}}
+	    {{range $paginator.Pagers}}
+	    <li>
+	      {{if (eq . $paginator)}}
+	      <span class="page-numbers current" aria-current="page">
+		{{.PageNumber}}
+	      </span>
+	      {{else}}
+	      <a class="page-numbers" href="{{.URL}}">
+		{{.PageNumber}}
+	      </a>
+	      {{end}}
+	    </li>
+	    {{end}}
+	    {{if $paginator.HasNext}}
+	    <li>
+	      <a class="next page-numbers" href="{{$paginator.Next.URL}}">
+		<i class="icon-right-open-big"></i>
+	      </a>
+	    </li>
+	    {{end}}
+	  </ul>
+
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "partials/footer.html" . }}

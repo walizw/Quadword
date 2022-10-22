@@ -1,0 +1,13 @@
+#+title: Sara
+#+avatar: /img/authors/walizw.png
+#+thumb: /img/authors/walizw.png
+#+id: walizw
+#+layout: author
+
+Helloo, I am walizw (but you can call me Sara :D)
+
+I am the creator and maintainer of Quadword. I am a lot into programming,
+actually, I've been coding for more than half of my life (as I started when I
+was 8). I write in Quadword about programming and some other low-level topics
+(which is the subject of programming I enjoy the most). I will keep everything
+free for everyone \o/

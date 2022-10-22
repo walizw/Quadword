@@ -1,0 +1,11 @@
+#+title: License
+#+layout: page
+#+date: Sat Oct 22 12:06:16 -05 2022
+#+authors[]: walizw
+
+Quadword has two licenses, the license of its platform and the license of its
+content, if you ever contribute to Quadword or take content from Quadword to
+whatever place you put it in, you must know that you content must remain with
+the same license.
+
+Those two licenses are the [[/gpl.txt][GNU General Public License 3.0]] and [[/cc.txt][CC-BY-SA]].

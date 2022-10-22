@@ -1,0 +1,26 @@
+{{$ctx_rel_url := .ctx.Permalink | relURL}}
+{{$has_children := ne .item.children nil}}
+{{$classes := ""}}
+
+{{if (eq $ctx_rel_url .item.url)}}
+{{$classes = "current-menu-item"}}
+{{end}}
+
+{{if ($has_children)}}
+{{$classes = printf "%s%s" $classes " menu-item-has-children" }}
+{{end}}
+
+<li class="{{$classes}}">
+  <a href="{{.item.url}}">
+    {{.item.title}}
+  </a>
+
+  {{if ($has_children)}}
+  <ul class="sub-menu">
+    {{$ctx := .ctx}}
+    {{range .item.children}}
+    {{partial "partials/elements/menu-item.html" (dict "item" . "ctx" $ctx)}}
+    {{end}}
+  </ul>
+  {{end}}
+</li>

@@ -1,0 +1,95 @@
+#+title: Introduction to Operators
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Sat Oct 22 18:11:34 -05 2022
+#+thumb: /img/posts/2022/10/intro_operators.png
+#+tags[]: C Programming Beginners
+#+excerpt: Learn what operators are in the C programming language.
+#+featured: 1
+#+layout: post
+
+Operators are function that use a symbolic name, the most common types of
+operators are those mathematical and logical, for example, doing 5 plus 9 or
+comparing if a number is greater than this other number.
+
+Operators are predefined in C - just like they are in most programming
+languages - and most operators tend to be combined with the infix style - what
+it means is that the operators are in between the operands.
+
+There are several operators style, such as prefix style:
+
+#+BEGIN_SRC c
+  + 5 8 // sums 5 and 8
+#+END_SRC
+
+Infix style:
+
+#+BEGIN_SRC c
+  5 + 8 // sums 5 and 8
+#+END_SRC
+
+And postfix style:
+
+#+BEGIN_SRC c
+  5 8 +
+#+END_SRC
+
+A /logical operator/ (sometimes called a "Boolean operator") is an operator that
+returns a Boolean result that's based on the Boolean result of one or two other
+expressions.
+
+An /arithmetic operator/ is a mathematical function that takes two operands and
+performs a calculation on them.
+
+Other operators include assignment, relational and bitwise (we will learn all of
+those in future entries.)
+
+* Expressions and Statements
+
+Statements form the basic program steps of C, and most statements are
+constructed from expressions, whereas an /expression/ consists of a combination
+of operators and operands, operands are what an operator operates on, operands
+can be constants, variables, or combinations of the two. Every expression has a
+value.
+
+Here are some examples of expressions:
+
+- =-6=
+- =4 + 20=
+- =a * (b + c / d) / 20=
+- =q = 5*2=
+- =x = ++q % 3=
+- =q > 3=
+
+Statements are the building blocks of a program. A program is basically a series
+of statements with special syntax ending with a semicolon (simple statements).
+You can think of an statement as a complete instruction to the computer.
+
+There are several types of statements:
+
+- Declaration statement: =_Bool is_true;=
+- Assignment statement: =is_true = 0;=
+- Function call statement: =printf ("Hello, World!");=
+- Return statement: =return 0;=
+
+And a lot more we haven't seen yet.
+
+C considers any expression to be a statement if you append a semicolon (called
+expression statements). So, =8;= and =3-4;= are perfectly valid in C (even
+though it's useless and wasteful.)
+
+There are also another type of statements called *Compound Statements* that are
+two or more statements grouped together in a block of code (basically, enclosed
+in braces), for example:
+
+#+BEGIN_SRC c
+  int i = 0;
+  while (i < 10)
+    {
+      printf ("hello");
+      i = i + 1;
+    }
+#+END_SRC
+
+Even though we don't know what any of that does yet, that is an example of a
+compound statement (what's inside of *{* and *}*.)

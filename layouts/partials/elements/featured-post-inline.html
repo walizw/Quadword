@@ -1,0 +1,33 @@
+<div class="post-count">
+  0{{.num}}
+</div>
+<div class="post-content">
+  <h5 class="entry-title mb-3">
+    <a href="{{.post.Permalink}}">
+      {{.post.Name}}
+    </a>
+  </h5>
+  <div class="entry-meta align-items-center">
+    {{$path := printf "/%s/%s" "authors" (index .post.Params.authors 0 | urlize)}}
+    {{with .site.GetPage $path}}
+    <a href="{{$path}}">
+      {{.Title}}
+    </a>
+    {{end}}
+    {{if (ne .post.Params.categories nil)}}
+    in
+    <a href="/categories/{{index .post.Params.categories 0 | urlize}}">
+      {{index .post.Params.categories 0}}
+    </a>
+    {{end}}
+    <br/>
+
+    <span>
+      {{.post.Date.Format "Jan 2"}}
+    </span>
+    <span class="middotDivider"></span>
+    <span class="readingTime">
+      {{.post.ReadingTime}} min read
+    </span>
+  </div>
+</div>

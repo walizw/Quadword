@@ -1,0 +1,90 @@
+#+title: Command Line Arguments
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Thu Oct 20 14:12:19 -05 2022
+#+thumb: /img/posts/2022/10/cmd_args.png
+#+tags[]: C Programming Beginners
+#+excerpt: Learn how the users can pass data to your C programs using the command-line.
+#+featured: 1
+#+layout: post
+
+There are times when a program is developed that requires the user to enter a
+small amount of information at the terminal. This information might consist of a
+number indicating the triangular number that you want to have calculated or a
+word that you want to have looked up in a dictionary. There are two ways of
+doing this, we can do it by either requesting the data from the user, or by
+supplying the information to the program at the time the program is executed
+(through command-line arguments.)
+
+We know that the =main= function is a special function in C, because it is the
+entry point of the program - but it is also important because it is the way we
+can get the command line arguments in our program.
+
+When =main= is called by the runtime system, two arguments are actually passed
+to the function: the first argument =argc= (short of argument count) is an
+integer value that specifies the number of arguments typed on the command-line.
+The second argument =argv= (short for argument vector) is an array of strings.
+(as we don't know what an array is yet, just think of it as a variable that has
+several values \o/)
+
+This is how our =main= function definition would look like, if we were to
+receive command-line arguments from the user:
+
+#+BEGIN_SRC c
+  int
+  main (int argc, char *argv[])
+  {
+    // Our program goes here :D
+  }
+#+END_SRC
+
+Let's consider at an actual example using the command-line arguments:
+
+#+BEGIN_SRC c
+  #include <stdio.h>
+
+  int
+  main (int argc, char *argv[])
+  {
+    int args_no = argc; // numbber of arguments
+    char *argument1 = argv[0];
+    char *argument2 = argv[1];
+
+    printf ("The user entered %d argument(s): %s and %s\n", args_no, argument1,
+            argument2);
+  }
+#+END_SRC
+
+*Note:* Don't worry that much about =argv[0]= and those types of variables, we
+will learn about them thoroughly in later entries, for now, just think of them as
+accessing the arguments, =argv[0]= being the name of the executable, =argv[1]=
+the first argument and that :D
+
+If we compile that file and run it like this:
+
+#+BEGIN_SRC bash
+  ./program.out
+#+END_SRC
+
+We would get the following output:
+
+#+BEGIN_SRC bash
+  The user entered 1 argument(s): ./c/5_command_line_arguments.out and (null)
+#+END_SRC
+
+It says we entered 1 argument (that one argument being the name of the
+executable file) and as we are printing two arguments (one that we did not pass)
+it's printing =(null)=, if we pass another argument like this:
+
+#+BEGIN_SRC bash
+  ./program.out sara
+#+END_SRC
+
+We'd get the following output:
+
+#+BEGIN_SRC bash
+  The user entered 2 argument(s): ./c/5_command_line_arguments.out and sara
+#+END_SRC
+
+Becase we have now, indeed, passed two arguments: the first one being the
+executable file name, and the last one is =sara= which could be anything!

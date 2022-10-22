@@ -1,22 +1,21 @@
-#+title: About
+#+title: About Quadword
 #+layout: page
+#+date: Fri Oct 21 16:53:37 -05 2022
+#+authors[]: walizw
 
-* About Quadword
+Quadword is a little website I built for myself, to write about things I liked,
+things I wanted to "/teach/" people, and because I also wanted to have a little
+space in the internet for my things.
 
-Quadword is a website where I will write about some topics I am into, so I can
-teach them to you as well!
+It all started as a very simple blog where there was only one author - not even
+templates for posts/pages/blog/search or anything like that. It was just
+organised with categories, with time I started adding things, until one day I
+started to rewrite Quadword so more people other than me, can upload their
+free - as in freedom content.
 
-All the content in Quadword is completely-free as in freedom (licensed under
-CC-BY-SA, unless stated otherwise), so yeah, check that license if you want to
-distribute, modify and redistribute the content shared here so you know what you
-can and can't do.
+Quadword is an open space for anyone that wants to write, in the *Contributing*
+top menu there is a lot of information on how you can do so, how you can add
+yourself as a Quadword author, how to start publishing entries, how to create
+categories, tags and your own pages here.
 
-** Contributing
-
-If you like the content posted in Quadword, you can contribute in a lot of
-different ways, you can share quadword so more people get to know the page, you
-can post your own entries by submitting pull requests to the repository (link
-in the top-right corner) or by sending github patches by email (check the
-contact page), you can donate with the buy me a coffee button that is in every
-page in Quadword (i'm sorry for the external and non-free javascript, feel free
-to block it :D)
+I hope you like Quadword \o/

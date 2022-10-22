@@ -1,0 +1,87 @@
+#+title: Your First C Challenge
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Sat Oct 22 17:42:05 -05 2022
+#+thumb: /img/posts/2022/10/challenge1.png
+#+tags[]: C Programming Beginners Challenge
+#+excerpt: A very simple C challenge to prove yourself
+#+featured: 1
+#+layout: post
+
+Lately, we've been learning a lot about datatypes, variables input and output,
+let's test now our knowledge about the topics of the past entries by completing
+a very simple challenge.
+
+* Area of a rectangle
+
+In this challenge, you are going to create a C program that displays the
+perimeter and area of a rectangle. For this program you'll need four variables
+of type double:
+
+- One variable to store the width of the rectangle.
+- One variable to store the area of the rectangle.
+- One variable to store the perimeter of the rectangle.
+- One variable to store the data of the rectangle.
+
+The program should perform the calculation for the perimeter of a rectangle (we
+haven't learned about performing operations yet, we'll learn a lot more about it
+when we get to operators, so I'll give a little example of doing this). The
+perimeter is calculated by adding the *height* and *width* and then multiplying
+it by two, and the area is calculated by multiplaying the width by the height
+variables.
+
+To sum two numbers you use the *+* operator, and to multiply them, you use
+the *** operator, look at this example:
+
+#+BEGIN_SRC c
+  1 + 2 // sum 1 and 2
+  3 * 2 // multiplies 3 by 2
+  9 * 2 + 1 // multiplies 9 by 2 and adds 1
+#+END_SRC
+
+The program should display the height, the width, and the perimeter in the
+correct format in one =printf= statement. The program should also display the
+height, the width, and the area variables in one =printf= statement, that is,
+the program should display two outputs.
+
+The code to calculate the perimeter and the area is the following:
+
+#+BEGIN_SRC c
+  perimeter = (height + width) * 2.0;
+  area = width * height;
+#+END_SRC
+
+*Note:* Even though it is not necessary, you can get input from the user by
+either command-line arguments or using *scanf*, it is not necessary, but if you
+want to do it that way, go ahead :D
+
+You can access the code for this challenge (solved) [[https://github.com/walizw/QuadwordSources/blob/main/c/5_challenge1_a.c][here]].
+
+* Creating and Using an Enum
+
+For the second challenge, you are going to create a C program that defines an
+enum type and uses that type to display the values of some variables. The
+program should create an enum called =websites= and the valid values for this
+type should be:
+
+- QUADWORD
+- GEEKSFORGEEKS
+- GITHUB
+- KILL_9
+- LOVELACEC
+
+Remember that, as enum represent integers, they should be in the same order as
+well.
+
+Once you have defined the enum, you will create three variables of the above
+enum type that are assigned values: QUADWORD, KILL_9 and LOVELACEC.
+
+The last thing the program should do is to display as output, the value of the
+three variables with each variable separated by a newline. The correct output
+would be if QUADWORD, KILL_9 and LOVELACEC variables are printed in that order:
+
+- 0
+- 3
+- 4
+
+You can access the code for this challenge (solved) [[https://github.com/walizw/QuadwordSources/blob/main/c/5_challenge1_b.c][here]].

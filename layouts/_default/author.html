@@ -1,0 +1,95 @@
+{{ partial "partials/head.html" (dict "context" . "class" "archive") }}
+{{ partial "partials/header.html" . }}
+
+{{$paginator := .Paginate (where (where $.Site.RegularPages "Type" "posts") "Params.authors" "intersect" (slice .Params.id)) 5}}
+{{$self := .}}
+
+<div class="content-widget">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+
+	<div class="box box-author m_b_2rem">
+	  <div class="post-author row-flex">
+	    <div class="author-img">
+	      <img alt="{{.Name}}" src="{{.Params.avatar}}" class="avatar"/>
+	    </div>
+
+	    <div class="author-content">
+	      <div class="top-author">
+		<h5 class="heading-font">
+		  <a href="{{.Permalink}}" rel="author" title="{{.Name}}">
+		    {{.Name}}
+		  </a>
+		</h5>
+		{{.Content}}
+		<div class="content-social-author">
+		  <!-- TODO: Author social -->
+		</div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <h4 class="spanborder">
+	    <span>Latest Posts</span>
+	  </h4>
+
+	  {{range $paginator.Pages}}
+	  {{partial "partials/elements/author-post.html" (dict "post" . "site" $.Site "subtle" (printf "%s's %s" $self.Name " Post"))}}
+	  {{end}}
+
+	  <ul class="page-numbers heading">
+	    {{if $paginator.HasPrev}}
+	    <li>
+	      <a class="next page-numbers" href="{{$paginator.Prev.URL}}">
+		<i class="icon-left-open-big"></i>
+	      </a>
+	    </li>
+	    {{end}}
+	    {{range $paginator.Pagers}}
+	    <li>
+	      {{if (eq . $paginator)}}
+	      <span class="page-numbers current" aria-current="page">
+		{{.PageNumber}}
+	      </span>
+	      {{else}}
+	      <a class="page-numbers" href="{{.URL}}">
+		{{.PageNumber}}
+	      </a>
+	      {{end}}
+	    </li>
+	    {{end}}
+	    {{if $paginator.HasNext}}
+	    <li>
+	      <a class="next page-numbers" href="{{$paginator.Next.URL}}">
+		<i class="icon-right-open-big"></i>
+	      </a>
+	    </li>
+	    {{end}}
+	  </ul>
+	  
+	</div>
+      </div>  <!-- col-md-8 -->
+
+      <div class="col-md-4 pl-md-5 sticky-sidebar">
+	<div class="sidebar-widget latest-tpl-4">
+	  <h5 class="spanborder widget-title">
+	    <span>Author's Pages</span>
+	  </h5>
+
+	  <ol>
+	    {{$pages := (where (where .Site.RegularPages "Type" "pages") "Params.authors" "intersect" (slice .Params.id)).Reverse}}
+	    {{range $index,$page := $pages}}
+	    <li class="d-flex">
+	      {{partial "partials/elements/featured-post-inline.html" (dict "post" $page "num" ($index | add 1) "site" $.Site)}}
+	    </li>
+	    {{end}}
+	  </ol>
+	</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{{ partial "partials/footer.html" . }}

@@ -1,0 +1,24 @@
+- title: Home
+  url: /
+- title: Explore
+  url: /explore/
+  children:
+    - title: Categories
+      url: /categories/
+    - title: Authors
+      url: /authors/
+- title: About
+  url: /about/
+- title: Contributing
+  url: /contributing/
+- title: Other
+  url: "#"
+  children:
+    - title: Code of Conduct
+      url: /other/coc/
+    - title: License
+      url: /other/license/
+- title: Donate
+  url: /donate/
+- title: Contact
+  url: /contact/

@@ -1,0 +1,41 @@
+{{$path := printf "/%s/%s" "authors" ((index .post.Params.authors 0) | urlize)}}
+{{$author_page := .site.GetPage $path}}
+
+<article class="row justify-content-between mb-5 mr-0">
+  <div class="col-md-9">
+    <div class="align-self-center">
+      <div class="capsSubtle mb-2">{{.subtle}}</div>
+      <h3 class="entry-title mb-3">
+	<a href="{{.post.Permalink}}">
+	  {{.post.Name}}
+	</a>
+      </h3>
+      {{if (ne .post.Params.excerpt nil)}}
+      <div class="entry-excerpt">
+	<p>
+	  {{.post.Params.excerpt}}
+	</p>
+      </div>
+      {{end}}
+
+      <div class="entry-meta align-items-center">
+	<a href="{{$author_page.Permalink}}">
+	  {{$author_page.Name}}
+	</a>
+	in
+	<a href="/categories/{{index .post.Params.categories 0}}">
+	  {{index .post.Params.categories 0}}
+	</a>
+	<br/>
+
+	<span>{{.post.Date.Format "Jan 2"}}</span>
+	<span class="middotDivider"></span>
+	<span class="readingTime">
+	  {{.post.ReadingTime}} min read
+	</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 bgcover"
+       style="background-image:url({{.post.Params.thumb}})"></div>
+</article>

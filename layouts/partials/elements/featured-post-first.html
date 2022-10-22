@@ -1,0 +1,48 @@
+<article class="first mb-3">
+  {{if (ne .post.Params.thumb nil)}}
+  <figure>
+    <a href="{{.post.Permalink}}">
+      <img alt="{{.post.Name}}" src="{{.post.Params.thumb}}"/>
+    </a>
+  </figure>
+  {{end}}
+
+  <h3 class="entry-title mb-3">
+    <a href="{{.post.Permalink}}">
+      {{.post.Name}}
+    </a>
+  </h3>
+
+  <div class="entry-excerpt">
+    <p>
+      {{if (ne .post.Params.excerpt nil)}}
+      {{.post.Params.excerpt}}
+      {{else}}
+      {{.post.Content | truncate 128}}
+      {{end}}
+    </p>
+  </div>
+
+  <div class="entry-meta align-items-center">
+    {{$path := printf "/%s/%s" "authors" (index .post.Params.authors 0 | urlize)}}
+    {{with .site.GetPage $path}}
+    <a href="{{$path}}">
+      {{.Title}}
+    </a>
+    {{end}}
+    in
+    <a href="/categories/{{index .post.Params.categories 0 | urlize}}">
+      {{index .post.Params.categories 0}}
+    </a>
+
+    <br/>
+
+    <span>
+      {{.post.Date.Format "Jan 2"}}
+    </span>
+    <span class="middotDivider"></span>
+    <span class="readingTime">
+      {{.post.ReadingTime}} min read
+    </span>
+  </div>
+</article>

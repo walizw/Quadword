@@ -1,32 +1,79 @@
-<header id="header">
-    <nav class="superHeader">
-	<div class="left">
-	    {{range .Site.Menus.left}}
-	    <a href="{{.URL}}">
-		{{.Name}}
-	    </a> |
-	    {{end}}
-	</div>
+{{ $ctx := . }}
 
-	<div class="right">
-	    <span class="doNotDisplay">Related sites:</span>
-	    |
-	    {{range .Site.Menus.right}}
-	    <a href="{{.URL}}">
-		{{.Name}}
-	    </a> |
-	    {{end}}
-	</div>
-    </nav>
+<div class="sticky-header fixed d-lg-none d-md-block">
+  <div class="text-right">
+    <div class="container mobile-menu-fixed pr-5">
+      <h1 class="logo-small navbar-brand">
+	<a href="/" class="logo">
+	  {{.Site.Title}}
+	</a>
+      </h1>
 
-    <div class="midHeader">
-	<h1 class="headerTitle">
-	    <a href="/">
-		{{.Site.Title}}
-		<span id="headerSubTitle">
-		    {{.Site.Params.desc}}
-		</span>
-	    </a>
-	</h1>
+      <a href="javascript:void (0)" class="menu-toggle-icon">
+	<span class="lines"></span>
+      </a>
     </div>
-</header>
+  </div>
+
+  <div class="mobi-menu">
+    <div class="mobi-menu__logo">
+      <h1 class="logo navbar-brand">
+	<a class="logo" href="/">{{.Site.Title}}</a>
+      </h1>
+    </div>
+
+    <form action="/search/" class="menu-search-form d-lg-flex">
+      <input name="q" type="text" class="search_field" placeholder="Search..."/>
+    </form>
+
+    <nav>
+      <ul>
+	{{ range .Site.Data.header_menu }}
+	{{ partial "partials/elements/menu-item.html" (dict "item" . "ctx" $ctx )}}
+	{{ end }}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div id="wrapper">
+  <header id="header" class="d-lg-block d-none">
+    <div class="container">
+      <div class="align-items-center w-100">
+
+	<h1 class="logo float-left navbar-brand">
+	  <a href="/" class="logo">
+	    {{.Site.Title}}
+	  </a>
+	</h1>
+
+	<div class="header-right float-right w-50">
+	  <form action="/search/" class="search-form d-lg-flex float-right">
+	    <a class="searh-toggle" href="javascript:void(0)">
+	      <i class="icon-search"></i>
+	    </a>
+
+	    <input name="q" type="text" class="search_field"
+		   placeholder="Search..."/>
+	  </form>
+	</div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <nav id="main-menu" class="stick d-lg-block d-none">
+      <div class="container">
+	<div class="menu-primary">
+          <ul>
+	    {{ range .Site.Data.header_menu }}
+	    {{ partial "partials/elements/menu-item.html" (dict "item" . "ctx" $ctx )}}
+	    {{ end }}
+	  </ul>
+	  <span></span>
+	</div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">

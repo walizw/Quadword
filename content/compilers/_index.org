@@ -1,4 +1,0 @@
-#+title: Compilers
-#+layout: page
-
-* Compilers

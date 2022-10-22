@@ -1,0 +1,50 @@
+{{$path := printf "/%s/%s" "authors" (index .post.Params.authors 0 | urlize)}}
+{{$author_page := .site.GetPage $path}}
+
+<article class="col-md-{{.size}}">
+  <div class="mb-3 d-flex row">
+    {{if (ne .post.Params.thumb nil)}}
+    <figure class="col-md-5">
+      <a href="{{.post.Permalink}}">
+	<img alt="{{.post.Name}}" src="{{.post.Params.thumb}}"
+	     style="height: 100%; object-fit: cover;"/>
+      </a>
+    </figure>
+    {{end}}
+
+    <div class="entry-content col-md-7 pl-md-0">
+      <h5 class="entry-title mb-3">
+	<a href="{{.post.Permalink}}">
+	  {{.post.Name}}
+	</a>
+      </h5>
+
+      {{if (eq .excerpt 1)}}
+      <div class="entry-excerpt">
+	<p>
+	  {{.post.Params.excerpt}}
+	</p>
+      </div>
+      {{end}}
+
+      <div class="entry-meta align-items-center">
+	<a href="{{$path}}">
+	  {{$author_page.Name}}
+	</a>
+	in
+	<a href="/categories/{{index .post.Params.categories 0 | urlize}}">
+	  {{index .post.Params.categories 0}}
+	</a>
+	<br/>
+
+	<span>
+	  {{.post.Date.Format "Jan 2"}}
+	</span>
+	<span class="middotDivider"></span>
+	<span class="readingTime">
+	  {{.post.ReadingTime}} min read
+	</span>
+      </div>
+    </div>
+  </div>
+</article>

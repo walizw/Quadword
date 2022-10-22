@@ -1,0 +1,28 @@
+#+title: Contributing
+#+layout: page
+#+date: Sat Oct 22 11:57:34 -05 2022
+#+authors[]: walizw
+
+Do you like Quadword and want to contribute to make it better? There are several
+ways you can contribute to the development and growth of Quadword:
+
+- By creating your own posts.
+- By correcting existing posts.
+- By contributing to its source code.
+- By donating.
+
+** Creating your own posts
+
+TODO: This
+
+** Correcting existing posts
+
+TODO: This
+
+** Contributing to its source code
+
+TODO: THis
+
+** By Donating
+
+If you want to donate, please refer to the [[/donate][donate]] page. Thank you so much.

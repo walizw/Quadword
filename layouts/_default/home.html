@@ -1,0 +1,98 @@
+{{ partial "partials/head.html" (dict "context" . "class" "home") }}
+{{ partial "partials/header.html" . }}
+
+{{$data := newScratch}}
+{{$data.Set "processed_posts" 0}} <!-- The amount of posts shown -->
+
+{{$featured := (first 25 (where (where .Site.RegularPages "Type" "posts") "Params.featured" "1").ByDate).Reverse}}
+{{$pinned := (first 4 (where (where .Site.RegularPages "Type" "posts") "Params.pinned" "1").ByDate).Reverse}}
+
+<div class="section-featured featured-style-1">
+  <div class="container">
+    <div class="row">
+
+      <!-- Begin featured -->
+      <div class="col-sm-12 col-md-9 col-xl-9">
+	<h2 class="spanborder h4">
+	  <span>Featured Posts</span>
+	</h2>
+
+	<div class="row">
+	  <div class="col-sm-12 col-md-6">
+	    <!-- The amount of posts that is shown in the left column, is based
+		 if either the first or second more recent featured posts has
+		 a thumbnail or not. -->
+	    {{$left_amount := 1}}
+	    {{if (and (eq (index $featured 0).Params.thumb nil) (eq (index $featured 1).Params.thumb nil))}}
+	    {{$left_amount = 2}}
+	    {{end}}
+
+	    {{range first $left_amount $featured}}
+	    {{$data.Add "processed_posts" 1}}
+	    {{partial "partials/elements/featured-post-first.html" (dict "post" . "site" $.Site)}}
+	    {{end}}
+	  </div>
+
+	  <div class="col-sm-12 col-md-6">
+	    {{range first 3 (after ($data.Get "processed_posts") $featured)}}
+	    {{$data.Add "processed_posts" 1}}
+	    {{partial "partials/elements/featured-post-small-block1.html" (dict "post" . "site" $.Site)}}
+	    {{end}}
+	  </div>
+	</div>
+      </div>
+      <!-- End featured -->
+
+      <!-- Begin pinned -->
+      <div class="col-sm-12 col-md-3 col-xl-3">
+	<div class="sidebar-widget latest-tpl-4">
+	  <h4 class="spanborder">
+	    <span>Pinned</span>
+	  </h4>
+
+	  <ol>
+	    {{range $index,$post := $pinned}}
+	    <li class="d-flex">
+	      {{partial "partials/elements/featured-post-inline.html" (dict "post" $post "num" ($index | add 1) "site" $.Site)}}
+	    </li>
+	    {{end}}
+	  </ol>
+	</div>
+      </div>
+      <!-- End Pinned -->
+
+    </div>
+
+    <div class="divider"></div>
+  </div>
+</div>
+
+<div class="content-widget">
+  <div class="container">
+    <div class="row justify-content-between">
+      {{range first 6 (after ($data.Get "processed_posts") $featured)}}
+      {{$data.Add "processed_posts" 1}}
+      {{partial "partials/elements/related-post-block.html" (dict "post" . "site" $.Site "excerpt" "1" "size" "6")}}
+      {{end}}
+    </div>
+  </div>
+</div>
+
+<div class="content-widget">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="row justify-content-between">
+
+	  {{range first 4 (after ($data.Get "processed_posts") $featured)}}
+	  {{$data.Add "processed_posts" 1}}
+	  {{partial "partials/elements/post-gallery-item.html" (dict "post" . "site" $.Site)}}
+	  {{end}}
+
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "partials/footer.html" . }}
