@@ -1,7 +1,7 @@
 {{ partial "partials/head.html" (dict "context" . "class" "single") }}
 {{ partial "partials/header.html" . }}
 
-{{$path := printf "/%s/%s" "authors" (.Params.author | urlize)}}
+{{$path := printf "/%s/%s" "authors" (index .Params.authors 0 | urlize)}}
 {{$author_page := .Site.GetPage $path}}
 
 <div class="container">
