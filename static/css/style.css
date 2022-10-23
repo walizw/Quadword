@@ -1218,20 +1218,20 @@ blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
   font-size: 13px;
 }
 
-.dropcap p:first-child:first-letter {
-  font-size: 4em;
-  float: left;
-  margin-top: .15em;
-  margin-right: 0.15em;
-  line-height: 1;
-}
+/* .dropcap p:first-child:first-letter { */
+/*   font-size: 4em; */
+/*   float: left; */
+/*   margin-top: .15em; */
+/*   margin-right: 0.15em; */
+/*   line-height: 1; */
+/* } */
 
-.dropcap blockquote p:first-child:first-letter {
-  font-size: inherit;
-  margin: 0;
-  line-height: inherit;
-  float: none;
-}
+/* .dropcap blockquote p:first-child:first-letter { */
+/*   font-size: inherit; */
+/*   margin: 0; */
+/*   line-height: inherit; */
+/*   float: none; */
+/* } */
 
 /*single tags*/
 .entry-bottom {
