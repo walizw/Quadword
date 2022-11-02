@@ -34,6 +34,7 @@ as operating systems topics, multithreading, networking, and compiler theory.
 *** Operators
 
 - [[/posts/2022/10/intro_operators][Introduction to Operators]]
+- [[/posts/2022/11/basic_operators][Basic Operators]]
 
 *** Control Flow
 

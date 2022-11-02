@@ -1,0 +1,172 @@
+#+title: Basic Operators
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Wed Nov  2 12:12:44 -05 2022
+#+thumb: /img/posts/2022/11/basic_operators.png
+#+tags[]: C Programming Beginners
+#+excerpt: Learn the basic operators of the C programming language.
+#+featured: 1
+#+layout: post
+
+Let's discuss the basic operators of the C programming languages, these are the
+logical, assignment, arithmetic and relational operators.
+
+An *arithmetic operator* is a mathematical function that takes two operands and
+performs a calculation on them (they are /infix/, which means the operator is in
+between the operands).
+
+A *logical operator* - sometimes called a "/boolean operator/" - is an operator
+that returns a boolean result that's based on the result of one, two or more
+expressions.
+
+An *assignment operator* just set variables equal to values, it assigns the
+value of the expression at its right, to the variable at its left.
+
+A *relational operator* will compare variables against each other.
+
+* Arithmetic operators in C
+
+The following is a table with all the arithmetic operators supported by the C
+programming language:
+
+| Operator | Description                                                 | Example |
+|----------+-------------------------------------------------------------+---------|
+| +        | Adds two operands                                           | A + B   |
+| -        | Subtracts second operand from the first                     | A - B   |
+| *        | Multiplies both operands                                    | A * B   |
+| /        | Divides numerator by de-numerator                           | B / A   |
+| %        | Modulus operator and remainder of after an integer division | A % B   |
+| ++       | Increment operator, increses the integer value by one       | A++     |
+| --       | Decrement operator, decreases the integer value by one      | A--     |
+
+Note that the *increment* and *decrement* operator can be both prefix and
+postfix, which means the *++* or the *--* can be before or after a variable. If
+it's before, it will be decremented before that statement is executed, and if
+it's postfix, it will be decremented after that statement is executed, for
+example.
+
+Let's look at an example using actual code:
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int
+  main (void)
+    {
+      int a = 33;
+      int b = 15;
+
+      printf ("%d + %d = %d\n", a, b, a + b);
+    }
+#+END_SRC
+
+And its output would be:
+
+#+BEGIN_SRC text
+  33 + 15 = 48
+#+END_SRC
+
+Now let's do it with all the operators:
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int
+  main (void)
+    {
+      int a = 33;
+      int b = 15;
+
+      printf ("%d + %d = %d\n", a, b, a + b);
+      printf ("%d - %d = %d\n", a, b, a - b);
+      printf ("%d * %d = %d\n", a, b, a * b);
+      printf ("%d / %d = %d\n", a, b, a / b);
+      printf ("%d %% %d = %d\n", a, b, a % b);
+      printf ("%d++ = %d\n", a, a++);
+      printf ("%d-- = %d\n", b, b--);
+
+      return 0;
+    }
+#+END_SRC
+
+And this would be the result:
+
+#+BEGIN_SRC text
+  33  +  15  =   48 
+  33  -  15  =   18 
+  33  *  15  =  495 
+  33  /  15  =    2 
+  33  %  15  =    3 
+  34++  =  33         
+  14--  =  15         
+#+END_SRC
+
+* Logical operands
+
+| Operator   | Description                                                                                                             | Example         |
+|------------+-------------------------------------------------------------------------------------------------------------------------+-----------------|
+| &&         | Called Logical AND.If both the operands are non-zero, then the condition becomes true                                   | A && B          |
+| \vert\vert | Called logical OR. If either operand is non zero, the condition becomes true                                            | A \vert\vert  B |
+| !          | It's used to reverse the logical state of its operand. If a condition is true, then this logical NOT will make it false | !(A && B)       |
+
+Let's look at an actual example in C:
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int
+  main (void)
+    {
+      int a = 0;
+      int b = 12;
+
+      printf ("%d && %d = %d\n", a, b, a && b);
+      printf ("%d || %d = %d\n", a, b, (a || b));
+      printf ("!(%d || %d) = %d", a, b, !(a || b));
+
+      return 0;
+    }
+#+END_SRC
+
+And this would be the result:
+
+#+BEGIN_SRC text
+    0  &&  12  =    0       
+    0  ||  12  =    1 
+  !(0  ||  12) =    0
+       
+#+END_SRC
+
+As you can see, when we did 0 *and* twelve we got false (remember 0 is false and
+1 is true), because 0 is not a non-zero value, but 12 is, but as we are doing
+*AND*, both must be non-zero values. When we did 0 *OR* 12, we got true, as
+either value is greater than zero, and finally, we did *NOT* 0 *OR* 12, we
+already know that 0 *OR* 12 is true, but as we are negating it using the *NOT*
+logical operator, we are getting false instead of true.
+
+* Assignment operators
+
+| Operator | Description                                                                                                                | Example      |
+|----------+----------------------------------------------------------------------------------------------------------------------------+--------------|
+| =        | Simple assignment operator                                                                                                 | A = 13       |
+| +=       | Add and assignment operator. Adds the left operand to the left operand and assings the value to the left operand           | A += 10 = 23 |
+| -=       | Subtract and assignment operator. Subtracts the left operand to the left operand and assigns the value to the left operand | A -= 10 = 3  |
+| *=       | Multiply and assignment operator. Multiplies the left operand to the left operand assigns the value to the left operand    | A *= 2 = 26  |
+
+Note that you combine all the arithmetic operators to the assignment operators,
+*%=*, */=* are valid operators. When we learn about bitwise operators, you'll
+also be able to put them together like *|=*, *<<=*, *>>=* and that with all the
+operators.
+
+* Relational operators
+
+The relational operators compare two operands:
+
+| Operator | Description                                                                     | Example |
+|----------+---------------------------------------------------------------------------------+---------|
+| ==       | Checks if both operands are equal                                               | A == B  |
+| !=       | Checks if both operands are not equal                                           | A != B  |
+| >        | Checks if the value to the left is greater than the value of the right          | A > B   |
+| <        | Checks if the value to the right is greater than the value of the left          | A < B   |
+| <=       | Checks if the value to the right is greater than or equal the value of the left | A <= B  |
+| >=       | Checks if the value to the left is greater than or equal the value of the right | A >= B  |
