@@ -1,0 +1,107 @@
+#+title: Bitwise Operators
+#+authors[]: walizw
+#+categories[]: Programming
+#+date: Sun Nov  6 20:54:14 GMT 2022
+#+thumb: /img/posts/2022/11/bitwise_operators.png
+#+tags[]: C Programming Beginners
+#+excerpt: Learn what bitwise operators are, and why it is useful to manipulate individual bits.
+#+featured: 1
+#+layout: post
+
+C offers bitwise logical operators and shift operators, they look like the
+logical operators we've seen before, but they are quite different as they
+operate on bits in integer values.
+
+Bitwise operators are not used in most programs, as they are more of an advanced
+technique, but we'll be learning a little about them now, as operators are a
+beginner concept, but then we'll dive deep into this topic.
+
+One major use of the bitwise AND (*&*) and the bitwise OR (*|*), is in
+operations to test and set individual bits in an integer variable, you can use
+individual bits to store data that involve one of two choices, you can literally
+store eight different values in one single byte.
+
+For example, you could use a single integer variable to store several
+characteristics of a person, you can store whether the person is a minor, or is
+an adult in one bit, you can use three bits to specify whether the person can
+speak French, German or Italian, another bit to record whether the person's
+salary is $50.000 or more, and any other kind of one-or-zero value you can think
+of.
+
+* Binary Numbers
+
+A binary number is a number that includes only ones and zeroes, and that number
+could be of any length, the following are all examples of binary numbers:
+
+|      0 |      10101 |
+|      1 |    0101010 |
+|     10 | 1011110101 |
+|     01 | 0110101110 |
+| 111000 |     000111 |
+
+Remember that one byte are 8 bits, and an int is /usually/ 4 bytes in most
+platforms, so you'll have 32 values that you can store with ones and zeroes.
+
+Every binary number has a corresponding Decimal value (and vice versa), some
+examples are:
+
+| Binary Number | Decimal Equivalent |
+|---------------+--------------------|
+|             1 |                  1 |
+|            10 |                  2 |
+|            11 |                  3 |
+|       1010111 |                 87 |
+
+** Binary to decimal
+
+Each position for a binary number has a value, for each digit you multiply
+the digit by its postion value, and then you add up all of the products to get
+the final result. In general, the "/position values/" in a binary number are the
+powers of two.
+
+The first position value is \(2^0\), which means its value is 1, the second
+position is \(2^1\), so it's 2, and so on with all its positions:
+
+\(
+\sum_{i=0}^{n=1}b_i2^i
+\)
+
+If we take the number: 01101001 we'll be able to know its decimal value is 105.
+
+|         128 |         64 |         32 |         16 |         8 |         4 |         2 |         1 |
+|-------------+------------+------------+------------+-----------+-----------+-----------+-----------|
+|           0 |          1 |          1 |          0 |         1 |         0 |         0 |         1 |
+|             |            |            |            |           |           |           | \(1 * 1\) |
+|             |            |            |            |           |           | \(0 * 2\) |           |
+|             |            |            |            |           | \(0 * 4\) |           |           |
+|             |            |            |            | \(1 * 8\) |           |           |           |
+|             |            |            | \(0 * 16\) |           |           |           |           |
+|             |            | \(1 * 32\) |            |           |           |           |           |
+|             | \(1 * 64\) |            |            |           |           |           |           |
+| \(0 * 128\) |            |            |            |           |           |           |           |
+
+If we add up \(1 + 8 + 32 + 64\) we'll have 105.
+
+** Bitwise operators
+
+If we have two variables:
+- *A* whose value is 60 (0011 1100)
+- *B* whose value is 13 (0000 1101)
+
+| Operator   | Description                                                                                                               | Example                      |
+|------------+---------------------------------------------------------------------------------------------------------------------------+------------------------------|
+| &          | Binary AND operator, copies a bit to the result if it exists in both operands                                             | (A & B) = 12 (0000 1100)     |
+| \vert\vert | Binary OR operator, copies a bit if it exists in either operand                                                           | (A \vert B) = 61 (0011 1101) |
+| ^          | Binary XOR operator, copies a bit if is set in one operand but not both                                                   | (A ^ B) = 49 (0011 0001)     |
+| ~          | Binary Ones Complement operator, is unary and has the effect of 'flipping' bits                                           | (~A) = -61 (1100 0011)       |
+| <<         | Binary Left Shift operator. The left operand value is moved left by the number of bits specified by the right operand.    | A << 2 = 240 (1111 0000)     |
+| >>         | Binary Right Shift operator. The left operands value is moved right by the number of bits specified by the right operand. | A >> 2 = 15 (0000 1111)      |
+
+Here's a small truth table:
+
+| p | q | p & q | p \vert q | p ^ q |
+|---+---+-------+-----------+-------|
+| 0 | 0 |     0 |         0 |     0 |
+| 0 | 1 |     0 |         1 |     1 |
+| 1 | 1 |     1 |         1 |     0 |
+| 1 | 0 |     0 |         1 |     1 |
